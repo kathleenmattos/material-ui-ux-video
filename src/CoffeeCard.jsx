@@ -14,32 +14,21 @@ import { CardMedia } from '@material-ui/core';
 
 
 const useStyles = makeStyles({
-    bullet: {
-        display: 'inline-block',
-        margin: '0 2px',
-        transform: 'scale(0.8)',
-    },
-    title: {
-        fontSize: 14,
-    },
-    pos: {
-        marginBottom: 12,
-    },
     cardImageHeightStyles: {
         height: 150,
-    }
+    },
 });
 
 
 const CoffeeCard = (props) => {
     const classes = useStyles();
     // const bull = <span className={classes.bullet}>•</span>;
-    const { avatarSrc, title, subtitle, description, imgSrc } = props;
+    const { avatarUrl, title, subtitle, description, imageUrl } = props;
     return (
 
         <Card>
             <CardHeader
-                avatar={<Avatar src={avatarSrc} />}
+                avatar={<Avatar src={avatarUrl} />}
                 action={
                     <IconButton aria-label="settings">
                         <ShareIcon />
@@ -50,7 +39,7 @@ const CoffeeCard = (props) => {
             />
             <CardMedia
                 className={classes.cardImageHeightStyles}
-                image={imgSrc}
+                image={imageUrl}
             />
             <CardContent>
                 <Typography variant="body2" component="p">
